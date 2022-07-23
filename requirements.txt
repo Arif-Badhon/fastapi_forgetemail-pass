@@ -67,6 +67,8 @@ pymongo[srv]==4.2.0
     # via -r requirements.in
 pyparsing==3.0.9
     # via packaging
+python-decouple==3.6
+    # via -r requirements.in
 python-multipart==0.0.5
     # via fastapi-mail
 redis==4.3.4
