@@ -1,4 +1,4 @@
-# from datetime import date
+from datetime import datetime
 import re
 from fastapi import FastAPI, HTTPException
 import fastapi_mail
@@ -39,7 +39,9 @@ def forget_password(request: ForgetPassword):
     #create reset code
     ResetCode = {
         "code": str(uuid.uuid1()),
-        "email": request.email
+        "email": request.email,
+        "status": 1,
+        "endtime": datetime.now()
     }
     #ResetCode.endtime = date.today().strftime('%d-%b-%Y')
     reset_code_collection.insert_one(dict(ResetCode))
